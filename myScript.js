@@ -1,7 +1,7 @@
 var weatherIcon = document.getElementById("weather-icon");
-	
-	var val = document.getElementById("wc").value;
-	  switch (val) {
+  
+  var val = document.getElementById("wc").value;
+    switch (val) {
       case 'Clouds':
           weatherIcon.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwFTkt5z_dxU6w1UnS1PxiZV3HDiPGsAW5Lrsp09MnlCmkQre9GzO8MnGytaaY1eZoqBN6SMJ4U578_uDtiuXswovr1T3o-Kt5KK0mlN_zC0RDodJFaKHQ3Uk-HIZ3vuMvAKNJi8DDFwWA7F6BOxz78Oh-UePwJTuc3PG0ZIZypPE1xlMPl5z46joaEw/s320/Clouds.png";
           break;

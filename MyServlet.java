@@ -1,4 +1,4 @@
-package MyPackage;
+package Mypackage;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,7 +21,7 @@ import com.google.gson.JsonObject;
  */
 @WebServlet("/MyServlet")
 public class MyServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,21 +31,21 @@ public class MyServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        response.getWriter().append("Served at: ").append(request.getContextPath());
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String inputData=request.getParameter("city");
-		String apiKey = "7cb44fae0d23adf912f6450792bc028a";
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        String inputData=request.getParameter("city");
+        String apiKey = "7cb44fae0d23adf912f6450792bc028a";
         String city = request.getParameter("city");
         String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
         URL url=new URL(apiUrl);
@@ -59,7 +59,7 @@ public class MyServlet extends HttpServlet {
         StringBuilder responseContent = new StringBuilder();
         Scanner scanner = new Scanner(reader);
         while(scanner.hasNext()) {
-        	responseContent.append(scanner.nextLine());
+            responseContent.append(scanner.nextLine());
         }
         scanner.close();
         Gson gson = new Gson();
@@ -92,6 +92,6 @@ public class MyServlet extends HttpServlet {
         
         request.getRequestDispatcher("index.jsp").forward(request, response);
         
-	}
+    }
 
 }
